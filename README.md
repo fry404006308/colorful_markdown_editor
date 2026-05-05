@@ -1,14 +1,25 @@
-# Colorful Markdown Editor
+# Markdown Editor Colorful
 
 ## Markdown
 
 English | [简体中文](README-CN.md) | [繁體中文](README-TW.md)
 
-A powerful and versatile markdown viewer that uses a WYSIWYG editor and supports viewing Word, Excel files, etc."
+A powerful and versatile markdown viewer that uses a WYSIWYG editor and supports viewing Word, Excel files, etc.
 
 ![colorful_markdown_editor_demo.gif](https://files.cnblogs.com/files/Renyi-Fan/colorful_markdown_editor_demo.gif)
 
 This extension changes the default markdown editor to the vditor.
+
+If your Markdown editor does not have colorful themes such as `Solarized_colorful`, add the following configuration to the `settings.json` file in VS Code.
+
+```json
+{
+  "workbench.editorAssociations": {
+    "*.md": "fanrenyi.markdownViewer",
+    "*.markdown": "fanrenyi.markdownViewer"
+  }
+}
+```
 
 If you want to use the original vscode editor, insert this in your `settings.json`.
 
@@ -23,7 +34,7 @@ If you want to use the original vscode editor, insert this in your `settings.jso
 
 Right-click in the editor to export Markdown as PDF, DOCX or HTML. PDF export relies on Chromium, and you can configure the Chromium browser path via `vscode-office.chromiumPath`.
 
-![colorful_markdown_editor_export](images/README/colorful_markdown_editor_export.png)
+![colorful_markdown_editor_export](https://img2024.cnblogs.com/blog/1163900/202605/1163900-20260505165615628-1039343710.png)
 
 Shortcuts: Base on [Vditor shortcuts](shortcut.md) and more:
 

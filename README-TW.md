@@ -1,4 +1,4 @@
-# Colorful Markdown Editor
+# Markdown Editor Colorful
 
 ## Markdown
 
@@ -8,7 +8,18 @@
 
 整合[Vditor](https://github.com/Vanessa219/vditor)實現對markdown的所見即所得編輯。
 
-如果你需要使用原生markdown編輯器, 在vscode設定中增加以下配置.
+如果你的markdown編輯器中沒有彩色主題 `Solarized_colorful` 等，在vscode設定`settings.json` 中增加以下配置。
+
+```json
+{
+  "workbench.editorAssociations": {
+    "*.md": "fanrenyi.markdownViewer",
+    "*.markdown": "fanrenyi.markdownViewer"
+  }
+}
+```
+
+如果你需要使用原生markdown編輯器, 在vscode設定 `settings.json` 中增加以下配置.
 
 ```json
 {
@@ -21,7 +32,7 @@
 
 在編輯器開啟右鍵選單可將markdown匯出為pdf, docx或者html, pdf依賴於chromium, 可透過 `vscode-office.chromiumPath`配置chromium瀏覽器路徑.
 
-![colorful_markdown_editor_export](images/README/colorful_markdown_editor_export.png)
+![colorful_markdown_editor_export](https://img2024.cnblogs.com/blog/1163900/202605/1163900-20260505165615628-1039343710.png)
 
 快捷鍵: 基於[Vditor快捷鍵](shortcut.md)以及更多:
 

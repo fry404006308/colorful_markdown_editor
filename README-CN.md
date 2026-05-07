@@ -4,11 +4,13 @@
 
 这是一个功能强大，颜色丰富的所见即所得的markdown编辑器
 
-![colorful_markdown_editor_demo.gif](https://files.cnblogs.com/files/Renyi-Fan/colorful_markdown_editor_demo.gif)
+![](https://files.cnblogs.com/files/Renyi-Fan/colorful_markdown_editor_demo.gif)
 
 集成[Vditor](https://github.com/Vanessa219/vditor)实现对markdown的所见即所得编辑.
 
-如果你的markdown编辑器中没有彩色主题 `Solarized_colorful` 等, 在vscode设置`settings.json`中增加以下配置.
+### 注意点1
+
+如果你的markdown编辑器中没有彩色主题 `Solarized_colorful` 等, 在vscode设置 `settings.json`中增加以下配置.
 
 ```json
 {
@@ -19,7 +21,11 @@
 }
 ```
 
-如果你需要使用原生markdown编辑器, 在vscode设置`settings.json`中增加以下配置.
+![](https://img2024.cnblogs.com/blog/1163900/202605/1163900-20260506104703488-371796145.jpg)
+
+### 注意点2
+
+如果你需要使用原生markdown编辑器, 在vscode设置 `settings.json`中增加以下配置.
 
 ```json
 {
@@ -30,9 +36,17 @@
 }
 ```
 
+### 注意点3
+
 在编辑器打开右键菜单可将markdown导出为pdf, docx或者html, pdf依赖于chromium, 可通过 `vscode-office.chromiumPath`配置chromium浏览器路径.
 
-![colorful_markdown_editor_export](https://img2024.cnblogs.com/blog/1163900/202605/1163900-20260505165615628-1039343710.png)
+![](https://img2024.cnblogs.com/blog/1163900/202605/1163900-20260505165615628-1039343710.png)
+
+### 注意点4
+
+编辑器在彩色主题的情况下，导出的html和pdf为彩色。编辑器在非彩色主题的情况下，导出的html和pdf为非彩色。
+
+## 快捷键
 
 快捷键: 基于[Vditor快捷键](shortcut.md)以及更多:
 

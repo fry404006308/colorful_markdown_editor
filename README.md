@@ -6,9 +6,11 @@ English | [简体中文](README-CN.md) | [繁體中文](README-TW.md)
 
 A powerful and versatile markdown viewer that uses a WYSIWYG editor and supports viewing Word, Excel files, etc.
 
-![colorful_markdown_editor_demo.gif](https://files.cnblogs.com/files/Renyi-Fan/colorful_markdown_editor_demo.gif)
+![](https://files.cnblogs.com/files/Renyi-Fan/colorful_markdown_editor_demo.gif)
 
 This extension changes the default markdown editor to the vditor.
+
+### Note 1
 
 If your Markdown editor does not have colorful themes such as `Solarized_colorful`, add the following configuration to the `settings.json` file in VS Code.
 
@@ -21,6 +23,10 @@ If your Markdown editor does not have colorful themes such as `Solarized_colorfu
 }
 ```
 
+![](https://img2024.cnblogs.com/blog/1163900/202605/1163900-20260506104703488-371796145.jpg)
+
+### Note 2
+
 If you want to use the original vscode editor, insert this in your `settings.json`.
 
 ```json
@@ -32,9 +38,21 @@ If you want to use the original vscode editor, insert this in your `settings.jso
 }
 ```
 
+### Note 3
+
 Right-click in the editor to export Markdown as PDF, DOCX or HTML. PDF export relies on Chromium, and you can configure the Chromium browser path via `vscode-office.chromiumPath`.
 
-![colorful_markdown_editor_export](https://img2024.cnblogs.com/blog/1163900/202605/1163900-20260505165615628-1039343710.png)
+![](https://img2024.cnblogs.com/blog/1163900/202605/1163900-20260505165615628-1039343710.png)
+
+### Note 4
+
+Only when the editor uses the colorful theme will the exported PDF be in color.
+
+When the editor uses a colored theme, the exported HTML and PDF will be in color.
+
+When the editor uses a non-colored theme, the exported HTML and PDF will be non-colored.
+
+## Shortcuts
 
 Shortcuts: Base on [Vditor shortcuts](shortcut.md) and more:
 

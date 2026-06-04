@@ -44,7 +44,7 @@ Markdown 相關的命令、自訂編輯器 ID 和設定使用 `fanrenyi-markdown
 
 在編輯器開啟右鍵選單可將markdown匯出為pdf, docx或者html, pdf依賴於chromium, 可透過 `fanrenyi-markdown.chromiumPath`配置chromium瀏覽器路徑.
 
-![](https://img2024.cnblogs.com/blog/1163900/202605/1163900-20260505165615628-1039343710.png)
+![](https://images.cnblogs.com/cnblogs_com/Renyi-Fan/1188097/o_260604124858_export02.jpg)
 
 ### 注意點4
 

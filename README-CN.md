@@ -8,6 +8,10 @@
 
 集成[Vditor](https://github.com/Vanessa219/vditor)实现对markdown的所见即所得编辑.
 
+### 命令和设置命名空间
+
+Markdown 相关的命令、自定义编辑器 ID 和设置使用 `fanrenyi-markdown.*` 命名空间。非 Markdown 的 Office 相关功能使用 `fanrenyi-office.*`。为了兼容旧用户，插件仍会读取旧的 `vscode-office.*` Markdown 设置，但新的配置示例都使用 `fanrenyi-markdown.*`。
+
 ### 注意点1
 
 如果你的markdown编辑器中没有彩色主题 `Solarized_colorful` 等, 在vscode设置 `settings.json`中增加以下配置.
@@ -15,13 +19,13 @@
 ```json
 {
   "workbench.editorAssociations": {
-    "*.md": "fanrenyi.markdownViewer",
-    "*.markdown": "fanrenyi.markdownViewer"
+    "*.md": "fanrenyi-markdown.viewer",
+    "*.markdown": "fanrenyi-markdown.viewer"
   }
 }
 ```
 
-![](https://img2024.cnblogs.com/blog/1163900/202605/1163900-20260506104703488-371796145.jpg)
+![](https://images.cnblogs.com/cnblogs_com/Renyi-Fan/1188097/o_260604123900_no_colorful_theme02.jpg)
 
 ### 注意点2
 
@@ -38,13 +42,67 @@
 
 ### 注意点3
 
-在编辑器打开右键菜单可将markdown导出为pdf, docx或者html, pdf依赖于chromium, 可通过 `vscode-office.chromiumPath`配置chromium浏览器路径.
+在编辑器打开右键菜单可将markdown导出为pdf, docx或者html, pdf依赖于chromium, 可通过 `fanrenyi-markdown.chromiumPath`配置chromium浏览器路径.
 
 ![](https://img2024.cnblogs.com/blog/1163900/202605/1163900-20260505165615628-1039343710.png)
 
 ### 注意点4
 
 编辑器在彩色主题的情况下，导出的html和pdf为彩色。编辑器在非彩色主题的情况下，导出的html和pdf为非彩色。
+
+## 自定义 Markdown 样式
+
+自定义样式通过专门的 `Custom` 编辑器主题生效，可以同时影响 Vditor 编辑器和导出的 PDF。
+
+最简单的使用方式：
+
+1. 执行命令 `Markdown: Create Custom Style Example File`。
+2. 插件会创建 `.vscode/markdown-custom-style.css`。
+3. 插件会自动把 `fanrenyi-markdown.editorTheme` 切换为 `Custom`。
+4. 修改并保存生成的 CSS 文件即可。
+
+也可以在 `settings.json` 中手动配置：
+
+```json
+{
+  "fanrenyi-markdown.editorTheme": "Custom",
+  "fanrenyi-markdown.customStyle.enabled": true,
+  "fanrenyi-markdown.customStyle.cssFile": "${workspaceFolder}/.vscode/markdown-custom-style.css",
+  "fanrenyi-markdown.customStyle.variable": {
+    "fontFamily": "\"Segoe UI\", \"Microsoft YaHei\", Arial, sans-serif",
+    "fontSize": "16px",
+    "lineHeight": "1.78",
+    "textColor": "#263238",
+    "backgroundColor": "#fbfcf8",
+    "h1Color": "#145c52",
+    "h2Color": "#8a4f14",
+    "linkColor": "#0b7285",
+    "blockquoteBorderColor": "#4c9f70",
+    "blockquoteBackgroundColor": "#eef7f1",
+    "inlineCodeColor": "#9b2c2c",
+    "inlineCodeBackground": "#f7e9e9",
+    "codeBlockBackground": "#f4f6f8",
+    "tableBorderColor": "#b8c2cc",
+    "tableHeaderBackground": "#edf2f7",
+    "tableEvenRowBackground": "#f7fafc"
+  }
+}
+```
+
+`fanrenyi-markdown.customStyle.variable` 只修改对应的单个属性。例如 `h2Color` 只会修改二级标题颜色。如果需要边框、间距、阴影等更复杂的样式，请写在 CSS 文件中。
+
+支持的变量字段：
+
+`fontFamily`, `fontSize`, `lineHeight`, `textColor`, `backgroundColor`, `h1Color`, `h2Color`, `h3Color`, `h4Color`, `h5Color`, `h6Color`, `h1FontSize`, `h2FontSize`, `h3FontSize`, `linkColor`, `strongColor`, `emphasisColor`, `blockquoteBorderColor`, `blockquoteBackgroundColor`, `inlineCodeColor`, `inlineCodeBackground`, `codeBlockColor`, `codeBlockBackground`, `codeFontFamily`, `tableBorderColor`, `tableHeaderColor`, `tableHeaderBackground`, `tableEvenRowBackground`.
+
+样式优先级：
+
+1. 主题 CSS。
+2. `fanrenyi-markdown.customStyle.cssFile`。
+3. `fanrenyi-markdown.customStyle.css`。
+4. `fanrenyi-markdown.customStyle.variable`。
+
+生成的 `markdown-custom-style.css` 中包含更详细的选择器示例，覆盖标题、段落、列表、任务列表、引用、代码、表格、图片、数学公式、Mermaid 图、details 折叠块以及部分 Vditor UI 区域。Vditor 编辑器中的选择器通常以 `#vditor` 开头；导出 PDF 中的选择器通常以 `.content-wrapper` 开头。
 
 ## 快捷键
 

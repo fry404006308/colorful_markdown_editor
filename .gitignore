@@ -1,0 +1,13 @@
+# ---- FryMultiGitSync 默认 .gitignore ----
+__pycache__/
+*.pyc
+*.pyo
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.temp
+~$*
+node_modules/
+.ipynb_checkpoints/
